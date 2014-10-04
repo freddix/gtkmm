@@ -2,12 +2,12 @@
 
 Summary:	A C++ interface for the GTK+
 Name:		gtkmm
-Version:	2.24.2
-Release:	3
+Version:	2.24.4
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkmm/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	7f99b5bc384785baf99bd22d4a210f4b
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtkmm/2.24/%{name}-%{version}.tar.xz
+# Source0-md5:	b9ac60c90959a71095f07f84dd39961d
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	atkmm-devel
 BuildRequires:	autoconf
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT	\
 	libdocdir=%{_gtkdocdir}/%{name}-%{apiver}
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/gtkmm-%{apiver}/demo
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
